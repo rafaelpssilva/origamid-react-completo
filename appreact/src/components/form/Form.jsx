@@ -11,9 +11,10 @@ function Form() {
             </p>
             <p>
                 <label htmlFor="email">Email</label>
-                <Input />
+                <Input tipo="email" required placeholder="digite seu email" />
             </p>
-            <Button />
+            <Button text="Enviar" />
+            <Button text="Limpar" />
         </form>
     );
 }
