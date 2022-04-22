@@ -1,19 +1,15 @@
 import React from "react";
+import Api from "./components/desafios/Api";
 
 function App() {
-    const [dados, setDados] = React.useState([]);
-
     function apiGet() {
-        fetch("https://ranekapi.origamid.dev/json/api/produto/tablet")
-            .then((resp) => resp.json())
-            .then((json) => setDados(json));
+        fetch("https://ranekapi.origamid.dev/json/api/produto/tablet");
     }
 
     return (
-        <>
-            {apiGet()}
-            {JSON.stringify(data)}
-        </>
+        <div>
+            <Api />
+        </div>
     );
 }
 
