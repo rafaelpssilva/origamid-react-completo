@@ -1,12 +1,8 @@
 import React from "react";
-import Api from "./components/desafios/Api";
+import UseRef from "./components/hooks/UseRef";
 
 function App() {
-    return (
-        <div>
-            <Api />
-        </div>
-    );
+    return <UseRef />;
 }
 
 export default App;
