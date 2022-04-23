@@ -1,8 +1,13 @@
 import React from "react";
-import UseRef from "./components/hooks/UseRef";
+import { GlobalStore } from "./components/desafios/GlobalContext";
+import ProdutoContext from "./components/desafios/ProdutoContext";
 
 function App() {
-    return <UseRef />;
+    return (
+        <GlobalStore>
+            <ProdutoContext />
+        </GlobalStore>
+    );
 }
 
 export default App;
