@@ -5,16 +5,18 @@ export const GlobalContext = React.createContext();
 export const GlobalStore = ({ children }) => {
     const [produtos, setProdutos] = React.useState(null);
 
-    async function pegarProdutos() {
-        const produtos = await fetch(
-            "https://ranekapi.origamid.dev/json/api/produto"
-        );
-        const json = await produtos.json();
-        setProdutos(json);
+    React.useEffect(() => {
+        fetch("https://ranekapi.origamid.dev/json/api/produto/")
+            .then((resp) => resp.json())
+            .then((json) => setProdutos(json));
+    }, []);
+
+    function limparDados() {
+        setProdutos(null);
     }
 
     return (
-        <GlobalContext.Provider value={{ pegarProdutos }}>
+        <GlobalContext.Provider value={{ produtos, limparDados }}>
             {children}
         </GlobalContext.Provider>
     );
