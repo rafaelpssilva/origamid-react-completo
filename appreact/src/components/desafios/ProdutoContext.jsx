@@ -2,7 +2,12 @@ import React from "react";
 import { GlobalContext } from "./GlobalContext";
 
 function ProdutoContext() {
-    const { produtos, limparDados } = React.useContext(GlobalContext);
+    const { produtos, limparDados, visible, setVisible } =
+        React.useContext(GlobalContext);
+
+    function handleClick() {
+        setVisible(!visible);
+    }
 
     if (global.produtos === null) return null;
 
@@ -15,6 +20,7 @@ function ProdutoContext() {
                     ))}
             </ul>
             <button onClick={limparDados}>Limpar Dados</button>
+            <button onClick={handleClick}>Aparecer</button>
         </div>
     );
 }
