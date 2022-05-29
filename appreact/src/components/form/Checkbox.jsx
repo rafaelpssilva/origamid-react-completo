@@ -11,7 +11,7 @@ function Checkbox() {
                     checked={termos}
                     onChange={({ target }) => setTermos(target.checked)}
                 />
-                Aceito os termos
+                Aceito os termos 
             </label>
             {termos && <p>Aceitou os termos</p>}
         </form>
